@@ -1,0 +1,635 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DD300965-595D-4A9B-A3D0-71FDF9AA40F5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XsCoinWeb</RootNamespace>
+    <AssemblyName>XsCoinWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44352</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BitnetClientLibraries.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BitnetClientLibraries.Client.1.0.0\lib\net45\BitnetClientLibraries.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.2\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Nat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NBitcoin.1.0.8.19\lib\net45\Mono.Nat.dll</HintPath>
+    </Reference>
+    <Reference Include="NBitcoin, Version=1.0.8.19, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NBitcoin.1.0.8.19\lib\net45\NBitcoin.dll</HintPath>
+    </Reference>
+    <Reference Include="NBitcoin.BouncyCastle, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NBitcoin.1.0.8.19\lib\net45\NBitcoin.BouncyCastle.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.ABI, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.ABI.3.8.0\lib\netstandard1.1\Nethereum.ABI.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.Accounts, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.Accounts.3.8.0\lib\netstandard1.1\Nethereum.Accounts.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.BlockchainProcessing, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.BlockchainProcessing.3.8.0\lib\netstandard1.1\Nethereum.BlockchainProcessing.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.Contracts, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.Contracts.3.8.0\lib\netstandard1.1\Nethereum.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.Hex, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.Hex.3.8.0\lib\netstandard1.1\Nethereum.Hex.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.JsonRpc.Client, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.JsonRpc.Client.3.8.0\lib\netstandard1.1\Nethereum.JsonRpc.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.JsonRpc.RpcClient, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.JsonRpc.RpcClient.3.8.0\lib\netstandard1.1\Nethereum.JsonRpc.RpcClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.KeyStore, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.KeyStore.3.8.0\lib\netstandard1.1\Nethereum.KeyStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.Model, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.Model.3.8.0\lib\netstandard1.1\Nethereum.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.RLP, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.RLP.3.8.0\lib\netstandard1.1\Nethereum.RLP.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.RPC, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.RPC.3.8.0\lib\netstandard1.1\Nethereum.RPC.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.Signer, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.Signer.3.8.0\lib\netstandard1.1\Nethereum.Signer.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.Util, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.Util.3.8.0\lib\netstandard1.1\Nethereum.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="Nethereum.Web3, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nethereum.Web3.3.8.0\lib\netstandard1.1\Nethereum.Web3.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.113.1\lib\net45\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppJS\accounttop.js" />
+    <Content Include="AppJS\angular.min.js" />
+    <Content Include="AppJS\app.js" />
+    <Content Include="AppJS\maineport.js" />
+    <Content Include="AppJS\authService.js" />
+    <Content Include="AppJS\bootstrap-notify.js" />
+    <Content Include="AppJS\demo.js" />
+    <Content Include="AppJS\ForgetPassword.js" />
+    <Content Include="AppJS\GtreeNew.js" />
+    <Content Include="AppJS\join.js" />
+    <Content Include="AppJS\mainjs.js" />
+    <Content Include="AppJS\PaymentLinkNew.js" />
+    <Content Include="AppJS\User.js" />
+    <Content Include="AppJS\Withdraw.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="emails\changpass.htm" />
+    <Content Include="emails\forgotpass.htm" />
+    <Content Include="emails\gbtc-logo.png" />
+    <Content Include="emails\getintoch.htm" />
+    <Content Include="emails\img\black.png" />
+    <Content Include="emails\img\facebook-rounded-white.png" />
+    <Content Include="emails\img\head.jpg" />
+    <Content Include="emails\img\head2.jpg" />
+    <Content Include="emails\img\left.png" />
+    <Content Include="emails\img\linkedin-rounded-white.png" />
+    <Content Include="emails\img\logo.png" />
+    <Content Include="emails\img\logo2.png" />
+    <Content Include="emails\img\matching.png" />
+    <Content Include="emails\img\or.png" />
+    <Content Include="emails\img\quot.jpg" />
+    <Content Include="emails\img\ref.png" />
+    <Content Include="emails\img\right.png" />
+    <Content Include="emails\img\roi.png" />
+    <Content Include="emails\img\trader.png" />
+    <Content Include="emails\img\twitter-rounded-white.png" />
+    <Content Include="emails\otp - Copy.htm" />
+    <Content Include="emails\otp.htm" />
+    <Content Include="emails\successful.htm" />
+    <Content Include="emails\withdrawDone.htm" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="XSCOIN.sol" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="login.html" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="secaue\activate.aspx" />
+    <Content Include="secaue\assets\css\style.css" />
+    <Content Include="secaue\assets\css\vendors.css" />
+    <Content Include="secaue\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="secaue\assets\img\loader.svg" />
+    <Content Include="secaue\assets\img\logo-icon.png" />
+    <Content Include="secaue\assets\img\logo-light2.png" />
+    <Content Include="secaue\assets\js\app.js" />
+    <Content Include="secaue\assets\js\vendors.js" />
+    <Content Include="secaue\btc-report.aspx" />
+    <Content Include="secaue\dir-ref.aspx" />
+    <Content Include="secaue\downline.aspx" />
+    <Content Include="secaue\g-cards.aspx" />
+    <Content Include="secaue\g-tree.aspx" />
+    <Content Include="secaue\giftcarddetail.aspx" />
+    <Content Include="secaue\index.aspx" />
+    <Content Include="secaue\main-statement.aspx" />
+    <Content Include="secaue\o-giftcard.aspx" />
+    <Content Include="secaue\package.aspx" />
+    <Content Include="secaue\password.aspx" />
+    <Content Include="secaue\Pay-ment.aspx" />
+    <Content Include="secaue\profile.aspx" />
+    <Content Include="secaue\ref-report.aspx" />
+    <Content Include="secaue\roi-report.aspx" />
+    <Content Include="secaue\transfer.aspx" />
+    <Content Include="secaue\trn-hostory.aspx" />
+    <Content Include="secaue\upgrade-report.aspx" />
+    <Content Include="secaue\upgrade.aspx" />
+    <Content Include="secaue\w-history.aspx" />
+    <Content Include="secaue\withdraw.aspx" />
+    <Content Include="secaue\xsaddress.aspx" />
+    <Content Include="signin.aspx" />
+    <Content Include="Site.Master" />
+    <Content Include="tree\info.png" />
+    <Content Include="tree\line1.png" />
+    <Content Include="tree\line2.png" />
+    <Content Include="tree\line3.png" />
+    <Content Include="tree\open.gif" />
+    <Content Include="tree\paid.gif" />
+    <Content Include="tree\paid.png" />
+    <Content Include="tree\paid12.gif" />
+    <Content Include="tree\unpaid.png" />
+    <Content Include="tree\unpaid12.gif" />
+    <Content Include="tree\user_main.jpg" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APPCode\AdminClass.cs" />
+    <Compile Include="APPCode\APPDL.cs" />
+    <Compile Include="APPCode\ClassEmail.cs" />
+    <Compile Include="APPCode\ClassUserAccount.cs" />
+    <Compile Include="APPCode\ClassUserMaster.cs" />
+    <Compile Include="APPCode\CoinPayments.cs" />
+    <Compile Include="APPCode\DataUtility.cs" />
+    <Compile Include="APPCode\DL.cs" />
+    <Compile Include="APPCode\Entities.cs" />
+    <Compile Include="APPCode\Entity.cs" />
+    <Compile Include="APPCode\GiftCardDB.cs" />
+    <Compile Include="APPCode\InsertFunction.cs" />
+    <Compile Include="APPCode\method.cs" />
+    <Compile Include="APPCode\PrintHelper.cs" />
+    <Compile Include="APPCode\Recharge.cs" />
+    <Compile Include="APPCode\secure.cs" />
+    <Compile Include="APPCode\TokenEncode.cs" />
+    <Compile Include="APPCode\UserAppClass.cs" />
+    <Compile Include="APPCode\UserClass.cs" />
+    <Compile Include="APPCode\utility.cs" />
+    <Compile Include="APPCode\Web3Class.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountTopAPIController.cs" />
+    <Compile Include="Controllers\AppTreeController.cs" />
+    <Compile Include="Controllers\GiftCardController.cs" />
+    <Compile Include="Controllers\ReportUserAPIController.cs" />
+    <Compile Include="Controllers\UserAccountsApiController.cs" />
+    <Compile Include="Controllers\UserAPIController.cs" />
+    <Compile Include="Controllers\UserAPIdataController.cs" />
+    <Compile Include="Controllers\UserAppAPIController.cs" />
+    <Compile Include="Controllers\WithdrawFundAPPController.cs" />
+    <Compile Include="Controllers\WithdrawFundController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="filter\ApiAuthenticationFilter.cs" />
+    <Compile Include="filter\AuthorizationRequiredAttribute.cs" />
+    <Compile Include="filter\BasicAuthenticationIdentity.cs" />
+    <Compile Include="filter\GenericAuthenticationFilter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="secaue\activate.aspx.cs">
+      <DependentUpon>activate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\activate.aspx.designer.cs">
+      <DependentUpon>activate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\btc-report.aspx.cs">
+      <DependentUpon>btc-report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\btc-report.aspx.designer.cs">
+      <DependentUpon>btc-report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\dir-ref.aspx.cs">
+      <DependentUpon>dir-ref.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\dir-ref.aspx.designer.cs">
+      <DependentUpon>dir-ref.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\downline.aspx.cs">
+      <DependentUpon>downline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\downline.aspx.designer.cs">
+      <DependentUpon>downline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\g-cards.aspx.cs">
+      <DependentUpon>g-cards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\g-cards.aspx.designer.cs">
+      <DependentUpon>g-cards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\g-tree.aspx.cs">
+      <DependentUpon>g-tree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\g-tree.aspx.designer.cs">
+      <DependentUpon>g-tree.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\giftcarddetail.aspx.cs">
+      <DependentUpon>giftcarddetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\giftcarddetail.aspx.designer.cs">
+      <DependentUpon>giftcarddetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\main-statement.aspx.cs">
+      <DependentUpon>main-statement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\main-statement.aspx.designer.cs">
+      <DependentUpon>main-statement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\o-giftcard.aspx.cs">
+      <DependentUpon>o-giftcard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\o-giftcard.aspx.designer.cs">
+      <DependentUpon>o-giftcard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\package.aspx.cs">
+      <DependentUpon>package.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\package.aspx.designer.cs">
+      <DependentUpon>package.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\password.aspx.cs">
+      <DependentUpon>password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\password.aspx.designer.cs">
+      <DependentUpon>password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\Pay-ment.aspx.cs">
+      <DependentUpon>Pay-ment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\Pay-ment.aspx.designer.cs">
+      <DependentUpon>Pay-ment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\ref-report.aspx.cs">
+      <DependentUpon>ref-report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\ref-report.aspx.designer.cs">
+      <DependentUpon>ref-report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\roi-report.aspx.cs">
+      <DependentUpon>roi-report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\roi-report.aspx.designer.cs">
+      <DependentUpon>roi-report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\transfer.aspx.cs">
+      <DependentUpon>transfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\transfer.aspx.designer.cs">
+      <DependentUpon>transfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\trn-hostory.aspx.cs">
+      <DependentUpon>trn-hostory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\trn-hostory.aspx.designer.cs">
+      <DependentUpon>trn-hostory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\upgrade-report.aspx.cs">
+      <DependentUpon>upgrade-report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\upgrade-report.aspx.designer.cs">
+      <DependentUpon>upgrade-report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\upgrade.aspx.cs">
+      <DependentUpon>upgrade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\upgrade.aspx.designer.cs">
+      <DependentUpon>upgrade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\w-history.aspx.cs">
+      <DependentUpon>w-history.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\w-history.aspx.designer.cs">
+      <DependentUpon>w-history.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\withdraw.aspx.cs">
+      <DependentUpon>withdraw.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\withdraw.aspx.designer.cs">
+      <DependentUpon>withdraw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="secaue\xsaddress.aspx.cs">
+      <DependentUpon>xsaddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="secaue\xsaddress.aspx.designer.cs">
+      <DependentUpon>xsaddress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shapes\activeandUpgradeHistory.cs" />
+    <Compile Include="shapes\ClassShapeTree.cs" />
+    <Compile Include="shapes\GiftCardShape.cs" />
+    <Compile Include="shapes\PayMentCoinPayment.cs" />
+    <Compile Include="shapes\RegisterShape.cs" />
+    <Compile Include="shapes\UserShape.cs" />
+    <Compile Include="signin.aspx.cs">
+      <DependentUpon>signin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signin.aspx.designer.cs">
+      <DependentUpon>signin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="secaue\MasterPage.Master" />
+    <Content Include="secaue\assets\fonts\Flaticon.eot" />
+    <Content Include="secaue\assets\fonts\Flaticon.ttf" />
+    <Content Include="secaue\assets\fonts\Flaticon.woff" />
+    <Content Include="secaue\assets\fonts\Flaticon.woff2" />
+    <Content Include="secaue\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="secaue\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="secaue\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="secaue\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="secaue\assets\fonts\FontAwesome.otf" />
+    <Content Include="secaue\assets\fonts\icofont.eot" />
+    <Content Include="secaue\assets\fonts\icofont.ttf" />
+    <Content Include="secaue\assets\fonts\icofont.woff" />
+    <Content Include="secaue\assets\fonts\icofont.woff2" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63164</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8545/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.113.1\build\net45\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.113.1\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net45\System.Data.SQLite.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

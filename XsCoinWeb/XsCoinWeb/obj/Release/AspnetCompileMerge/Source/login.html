@@ -1,0 +1,88 @@
+﻿
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="Hogo– Creative Admin Multipurpose Responsive Bootstrap4 Dashboard HTML Template" name="description" />
+    <meta content="Spruko Technologies Private Limited" name="author" />
+    <meta name="keywords" content="html admin template, bootstrap admin template premium, premium responsive admin template, admin dashboard template bootstrap, bootstrap simple admin template premium, web admin template, bootstrap admin template, premium admin template html5, best bootstrap admin template, premium admin panel template, admin template" /> <!-- Favicon -->
+    <link rel="icon" href="assets/images/brand/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/brand/favicon.ico" /> <!-- Title -->
+    <link rel="stylesheet" href="secaue/assets/plugins/bootstrap/css/bootstrap.min.css" /> <!-- Dashboard css -->
+
+    <link href="secaue/assets/css/style.css" rel="stylesheet" />
+     
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src="AppJS/angular.min.js"></script>
+
+    <script src="AppJS/authService.js"></script>
+  
+
+</head>
+<body class="bg-account sidebar-gone">
+
+
+    <div id="global-loader" style="display: none;">
+        <img src="https://www.spruko.com/demo/hogo/Hogo(ltr-rtl)/assets/images/icons/loader.svg" alt="loader" />
+    </div>
+    <div class="page">
+        <!-- page-content -->
+        <div class="page-content">
+            <div class="container text-center text-dark">
+                <div class="row">
+                    <div class="col-lg-4 d-block mx-auto">
+
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-md-12">
+                                <div class="card" ng-app="MyApp">
+                                    <div class="card-body" ng-controller="LoginController">
+                                        <div class="text-center mb-6">
+                                            <img src="secaue/assets/images/logo.png" />
+
+                                        </div>
+                                        <h3>Login</h3>
+                                        <p class="text-muted">Forget Password</p>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-addon bg-white"><i class="fa fa-user"></i></span>
+
+                                            <input type="text" class="form-control" name="UserID" ng-model="UserID" id="UserID" placeholder="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}" />
+
+
+
+
+                                        </div>
+                                        <div class="input-group mb-4">
+                                            <span class="input-group-addon bg-white"><i class="fa fa-unlock-alt"></i></span>
+                                            <input type="password" class="form-control" name="password" ng-model="password" id="password" placeholder="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'PASSWORD';}" />
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+
+                                                <a href="javascript:;" ladda="loading" ng-click="Login()" class="btn btn-primary btn-block">Sign in</a>
+                                                {{errorMsg}}
+
+
+
+                                            </div>
+                                            <div class="col-12"><a href="forget.html" class="btn btn-link box-shadow-0 px-0">Forgot password?</a> </div>
+                                            <div class="col-12"><a href="register.html" class="btn btn-link box-shadow-0 px-0">Sign up</a> </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- page-content end -->
+    </div>
+
+    <script src="AppJS/demo.js"></script>
+
+    <script src="AppJS/bootstrap-notify.js"></script>
+</body>
+</html>

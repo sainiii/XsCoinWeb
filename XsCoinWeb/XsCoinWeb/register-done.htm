@@ -1,0 +1,95 @@
+﻿
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no, viewport-fit=cover">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="Hogo– Creative Admin Multipurpose Responsive Bootstrap4 Dashboard HTML Template" name="description" />
+    <meta content="Spruko Technologies Private Limited" name="author" />
+    <meta name="keywords" content="html admin template, bootstrap admin template premium, premium responsive admin template, admin dashboard template bootstrap, bootstrap simple admin template premium, web admin template, bootstrap admin template, premium admin template html5, best bootstrap admin template, premium admin panel template, admin template" /> <!-- Favicon -->
+    <link rel="icon" href="assets/images/brand/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/brand/favicon.ico" /> <!-- Title -->
+    <link rel="stylesheet" href="secaue/assets/plugins/bootstrap/css/bootstrap.min.css" /> <!-- Dashboard css -->
+
+    <link href="secaue/assets/css/style.css" rel="stylesheet" />
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+
+
+    <script src="AppJS/angular.min.js"></script>
+
+    <script src="AppJS/register.js"></script>
+
+    <title></title>
+</head>
+
+
+
+<body class="bg-account sidebar-gone">
+
+
+    <div id="global-loader" style="display: none;">
+        <img src="https://www.spruko.com/demo/hogo/Hogo(ltr-rtl)/assets/images/icons/loader.svg" alt="loader" />
+    </div>
+    <div class="page">
+        <!-- page-content -->
+        <div class="page-content">
+            <div class="container text-center text-dark">
+                <div class="row">
+                    <div class="col-lg-4 d-block mx-auto">
+
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12 col-md-12">
+                                <div class="card" ng-app="MyApp">
+                                    <div class="card-body" ng-controller="CtrThanks  as ctrl">
+                                        <div class="text-center mb-1">
+                                            <img src="secaue/assets/images/logo.png" />
+
+                                        </div>
+                                        <h3>Account Created</h3>
+                                        <p class="m-b-20 text-center">Please note your login informations. <br /> You can check your email inbox also.</p>
+                                        <div class="input-group mb-3" ng-repeat="d in ctrl.Details">
+
+
+
+
+                                            <div class="input-group mb-3">
+                                                <h5>Account ID: <b> {{d.AppMstRegNo}}</b></h5>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <h5>Password: <b> {{d.Passowrd}}</b></h5>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <h5>Security Pin: <b> {{d.EPassowrd}}</b></h5>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <a href="login.html" class="btn btn-primary btn-sm">Account Login</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- page-content end -->
+    </div>
+
+    <script src="AppJS/demo.js"></script>
+
+    <script src="AppJS/bootstrap-notify.js"></script>
+
+</body>
+
+</html>
